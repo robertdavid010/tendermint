@@ -107,11 +107,23 @@ like:
 
 ::
 
-    {"jsonrpc":"2.0","id":"","result":[98,{"check_tx":{},"deliver_tx":{}}],"error":""}
-
-The ``98`` is a type-byte, and can be ignored (it's useful for
-serializing and deserializing arbitrary json). Otherwise, this result is
-empty - there's nothing to report on and everything is OK.
+{
+  "jsonrpc": "2.0",
+  "id": "",
+  "result": {
+    "check_tx": {
+      "code": 0,
+      "data": "",
+      "log": ""
+    },
+    "deliver_tx": {
+      "code": 0,
+      "data": "",
+      "log": ""
+    },
+    "hash": "2B8EC32BA2579B3B8606E42C06DE2F7AFA2556EF",
+    "height": 180
+  }
 
 We can confirm that our transaction worked and the value got stored by
 querying the app:
